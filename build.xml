@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- You may freely edit this file. See commented blocks below for -->
+<!-- some examples of how to customize the build. -->
+<!-- (If you delete it and reopen the project it will be recreated.) -->
+<project name="rdf2xml" default="default" basedir=".">
+	<description>Builds, tests, and runs the project rdf2xml.</description>
+	<import file="nbproject/build-impl.xml"/>
+
+        <property file="nbproject\project.properties"/>
+        <property name="rdf2xml.version" value="0.0.1"/>
+        <property name="rdf2xml.svn.wc" value="."/>
+        <property name="rdf2xml.svn.trunk" value="https://rdf2xml.googlecode.com/svn/trunk"/>
+        <property name="rdf2xml.svn.branch" value="https://rdf2xml.googlecode.com/svn/branches/${rdf2xml.version}"/>
+        <property name="rdf2xml.svn.tag" value="https://rdf2xml.googlecode.com/svn/tags/${rdf2xml.version}"/>
+        <property file="svn.properties"/>
+        
+	<!-- SVN commands -->
+	<path id= "svnant.classpath"  >
+		<fileset dir="utilities\svnant-1.1.0-RC2\lib" >
+			<include name= "*.jar" />
+		</fileset>
+	</path>
+	<typedef resource="org/tigris/subversion/svnant/svnantlib.xml" classpathref="svnant.classpath" />
+	
+	<!-- SVN commands -->
+	<target name="branch">
+		<svn username="${rdf2xml.svn.username}" password="${rdf2xml.svn.password}">
+			<copy srcUrl="${rdf2xml.svn.trunk}" destUrl="${rdf2xml.svn.branch}" message="Creating the branch ${rdf2xml.version}." />
+		</svn>
+	</target> 
+	<target name="tag" depends="branch">
+		<svn username="${rdf2xml.svn.username}" password="${rdf2xml.svn.password}">
+			<copy srcUrl="${rdf2xml.svn.trunk}" destUrl="${rdf2xml.svn.tag}" message="Creating the tag ${rdf2xml.version}." />
+		</svn>
+	</target>
+	
+	<target name="manifest">
+		<manifest file="manifest.mf">
+			<attribute name="Built-By" value="${application.vendor}"/>
+			<section name="common">
+				<attribute name="Implementation-Title" value="${application.title}"/>
+				<attribute name="Implementation-Version" value="${rdf2xml.version}"/>
+			</section>
+		</manifest>
+	</target>
+	
+	<target name="package">
+		<antcall target="clean"/>
+		<antcall target="manifest"/>
+		<antcall target="default"/>
+		<copy file="licence.txt" todir="dist" />
+		<delete file="rdf2xml-${rdf2xml.version}.zip"/>
+		<jar destfile="rdf2xml-${rdf2xml.version}.zip" basedir="dist" excludes="README.TXT"/>
+	</target>
+	
+	<target name="deploy" depends="tag,package" />
+	
+</project>

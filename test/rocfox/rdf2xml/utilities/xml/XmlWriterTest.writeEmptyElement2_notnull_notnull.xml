@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prefixROOT:root xmlns:prefixROOT="uriROOT">
+	<prefix:child xmlns:prefix="uri"/>
+</prefixROOT:root>

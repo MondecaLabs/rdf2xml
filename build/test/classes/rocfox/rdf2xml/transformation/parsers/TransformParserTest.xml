@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rtl:transform
+	xmlns:rtl="http://schema.rocfox.co.uk/rtl#"
+	xmlns="http://www.w3.org/1999/xhtml">
+	<rtl:template name="Elements">
+		<rtl:match>ElementsQuery</rtl:match>
+		<rtl:output/>
+	</rtl:template>
+	<rtl:template name="ElementRefinements">
+		<rtl:match>ElementRefinementsQuery</rtl:match>
+		<rtl:output/>
+	</rtl:template>
+	<rtl:output type="xml" encoding="UTF-8" version="1.0">
+		<html>
+			<body bgcolor="white">PageBody</body>
+		</html>
+	</rtl:output>
+</rtl:transform>

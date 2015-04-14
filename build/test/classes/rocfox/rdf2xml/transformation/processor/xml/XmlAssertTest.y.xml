@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ex:note xmlns:ex="http://www.example.com">
+	<ex:to>Tove</ex:to> 
+	<ex:from>Jani</ex:from> 
+	<ex:heading>Reminder</ex:heading> 
+	<ex:body>Don't forget me this weekend!</ex:body> 
+</ex:note>
