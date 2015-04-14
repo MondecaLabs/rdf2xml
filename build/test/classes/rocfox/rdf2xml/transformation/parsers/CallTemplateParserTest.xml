@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<call-template xmlns="http://schema.rocfox.co.uk/rtl#" name="CallTemplateTest">
-	<with-param name="Param1"/>
-	<with-param name="Param2"/>
-</call-template>

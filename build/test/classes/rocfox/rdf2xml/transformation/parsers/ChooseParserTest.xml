@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<choose xmlns="http://schema.rocfox.co.uk/rtl#">
-	<when test="$Test1"/>
-	<when test="$Test2"/>
-	<otherwise/>
-</choose>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<template name="MyTemplate" xmlns="http://schema.rocfox.co.uk/rtl#">
-	<param name="Param1" type="Literal"/>
-	<param name="Param2" type="Resource"/>
-	<match>MyQuery</match>
-	<output type="xml"/>
-</template>
